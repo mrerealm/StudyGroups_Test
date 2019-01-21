@@ -57,7 +57,8 @@ namespace StudentsDemo1.Models
                 {
                     var cols = line.Replace("{", "").Replace("}", "").Replace("'", "").Split(',');
                     // set NofCols
-                    NofCols = cols.Count();
+                    var nocols = cols.Count();
+                    if (nocols > NofCols) NofCols = nocols;
                     foreach (var col in cols)
                     {
                         var name = col.Trim().TrimEnd();
